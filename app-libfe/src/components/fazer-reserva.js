@@ -5,7 +5,6 @@ import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { NavLink, useHistory } from 'react-router-dom'
-import { IMaskInput } from "react-imask";
 
 
 const ActionSheet = styled.div`
@@ -55,17 +54,6 @@ const Button = styled.button`
   border: 2px #ff1d1d solid;
   font-weight: 700;
 `
-
-const FormContainer = styled.form`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-`
-
-const InputArea = styled.div`
-    width: 100%
-    `
 
 const Input = styled.input`
     width: 80%;
