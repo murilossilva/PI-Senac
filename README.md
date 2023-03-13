@@ -1,10 +1,10 @@
 # Projeto Integrador - Desenvolvimento de Sistemas Orientado a Dispositivos Móveis e Baseados na Web <img src="./public/React.svg.png" width="150px" style="position: absolute; right: 10px">
 
-Grupo 23:
-Mateus Baltar Maia de Mendonça
-Murilo Souza da Silva
-Thainy de Souza Lima
-Vinicius Ausgusto Primiani
+Grupo 23: <br>
+Mateus Baltar Maia de Mendonça<br>
+Murilo Souza da Silva <br>
+Thainy de Souza Lima <br>
+Vinicius Ausgusto Primiani <br>
 
 <hr>
 
