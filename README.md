@@ -1,4 +1,4 @@
-# Projeto Integrador - Desenvolvimento de Sistemas Orientado a Dispositivos Móveis e Baseados na Web <img src="./public/React.svg.png" width="150px" style="position: absolute; right: 10px">
+# Projeto Integrador - Desenvolvimento de Sistemas Orientado a Dispositivos Móveis e Baseados na Web 
 
 Grupo 23: <br>
 Mateus Baltar Maia de Mendonça<br>
