@@ -3,7 +3,7 @@ import { db } from "../db.js";
 let emailSessao = ''
 
 export const getAllUsers = ('/', (_, res) => {
-  const q = `SELECT * FROM usuarios`
+  const q = `SELECT * FROM livros`
 
   db.query(
     q,
@@ -14,6 +14,39 @@ export const getAllUsers = ('/', (_, res) => {
     }
   )
 })
+
+export const getAllBooks = ('/livros-indicacao', (_, res) => {
+  const q = `SELECT * FROM livros`
+
+  db.query(
+    q,
+    (err, data) => {
+      if (err) return res.json(err);
+
+      return res.status(200).json(data);   
+    }
+  )
+})
+
+export const getBooks = ('/buscar-livros', (req, res) => {
+
+  const livro = [
+    req.body.livro,
+  ]
+
+  const q = "SELECT * FROM `livros` WHERE `nome_livro` LIKE '%" + livro + "%'"
+  
+  db.query(
+    q,
+    livro,
+    (err, data) => {
+      if(data){
+        return res.status(200).json(data);
+      } else {
+        return res.status(200).json(err)
+      }
+  });
+});
 
 export const getUserEmail = ('/getEmail', (req, res) => {
 
@@ -58,19 +91,11 @@ export const getUsers = ('/login', (req, res) => {
 
 export const addUser = (req, res) => {
   const q =
-    "INSERT INTO `usuarios` (`nome`, `telefone`, `email`, `cep`, `endereco_logradouro`, `endereco_numero`, `endereco_complemento`, `endereco_bairro`, `endereco_cidade`, `endereco_uf`, `data_nascimento`, `cpf`, `senha`) VALUES(?)";
+    "INSERT INTO `usuarios` (`nome`, `email`, `data_nascimento`, `cpf`, `senha`) VALUES(?)";
 
   const values = [
     req.body.nome,
-    req.body.telefone,
     req.body.email,
-    req.body.cep,
-    req.body.endereco_logradouro,
-    req.body.endereco_numero,
-    req.body.endereco_complemento,
-    req.body.endereco_bairro,
-    req.body.endereco_cidade,
-    req.body.endereco_uf,
     req.body.data_nascimento,
     req.body.cpf,
     req.body.senha
@@ -93,8 +118,8 @@ export const deleteUser = (req, res) => {
   });
 };
 
-export const getReservations = (req, res) => {
-  const q = "SELECT * FROM `reservas` WHERE `cpf` = ?";
+export const getBooksUser = (req, res) => {
+  const q = "SELECT * FROM `livros_comprados` WHERE `cpf` = ?";
 
   const cpf = req.body.cpf
 
@@ -109,16 +134,17 @@ export const getReservations = (req, res) => {
   );
 };
 
-export const addReservation = (req, res) => {
+export const buyBook = (req, res) => {
   const q =
-    "INSERT INTO `reservas` (`cpf`, `nome_estabelecimento`, `data_reserva`, `horario_reserva`, `reservantes`) VALUES(?)";
+    "INSERT INTO `livros_comprados` (`cpf`, `codigo_de_barras`, `data_compra`, `hora_compra`, `link_pdf`, id_compra) VALUES(?)";
 
   const values = [
     req.body.cpf,
-    req.body.nome_estabelecimento,
-    req.body.data_reserva,
-    req.body.horario_reserva,
-    req.body.reservantes
+    req.body.codigo_de_barras,
+    req.body.data_compra,
+    req.body.hora_compra,
+    req.body.link_pdf,
+    req.body.id_compra
   ];
 
   db.query(q, [values], (err, data) => {

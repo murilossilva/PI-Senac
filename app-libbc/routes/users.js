@@ -1,5 +1,5 @@
 import express from "express";
-import { addUser, getReservations, getUsers, addReservation, getUserInfo, getUserEmail, getAllUsers } from "../controllers/user.js";
+import { getUsers, getUserEmail, getAllUsers, buyBook, getBooksUser, getAllBooks, getBooks, addUser } from "../controllers/user.js";
 
 const router = express.Router()
 
@@ -7,14 +7,16 @@ router.get('/', getAllUsers)
 
 router.post('/login', getUsers)
 
-router.post('/info', getUserInfo)
+router.post('/buscar-livros', getBooks)
 
-router.post('/getEmail', getUserEmail)
+router.post('/livros', getUserEmail)
 
-router.post("/", addUser)
+router.post("/livros-indicacao", getAllBooks)
 
-router.post('/reservations', getReservations)
+router.post('/livros-usuario', getBooksUser)
 
-router.post('/new-reservation', addReservation)
+router.post('/efetuar-compra', buyBook)
+
+router.post('/criar-conta', addUser)
 
 export default router

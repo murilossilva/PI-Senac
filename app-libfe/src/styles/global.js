@@ -21,12 +21,6 @@ const Global = createGlobalStyle`
         align-self: flex-start;
     }
 
-    .active, .actived {
-        background-color: #ff1d1d !important;
-        border: 2px solid #ff1d1d !important;
-        color: white !important;
-    }
-
     .timeToSchedule {
         border: 1.5px solid #ff1d1d;
         color: #ff1d1d;
