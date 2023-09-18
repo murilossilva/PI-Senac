@@ -1,8 +1,10 @@
-# Projeto Integrador - Desenvolvimento de Sistemas Orientado a Dispositivos Móveis e Baseados na Web 
+# Projeto Integrador - Análise de Soluções Integradas para Organizações 
 
-Grupo 23: <br>
+Grupo 14: <br>
+Lucas Fernando Baptista <br>
 Mateus Baltar Maia de Mendonça<br>
 Murilo Souza da Silva <br>
+Naelson Francisco Moreira da Silva <br> 
 Thainy de Souza Lima <br>
 Vinicius Ausgusto Primiani <br>
 
